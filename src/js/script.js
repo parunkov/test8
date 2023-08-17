@@ -2,7 +2,7 @@ const colours = ["#EB5757", "#F2994A", "#6FCF97", "#9B51E0", "#2F80ED", "#56CCF2
 const data = [45, 50, 20, 15, 10, 8, 6, 4];
 const radius = [150, 200, 120, 140, 160, 100, 110, 170];
 
-function drawPieSlice(settings) {
+const drawPieSlice = (settings) => {
     let d = "";
 
     const firstCircumferenceX = settings.centreX + settings.radius * Math.cos(settings.startAngleRadians);
@@ -28,7 +28,7 @@ function drawPieSlice(settings) {
 
     document.getElementById(settings.id).appendChild(arc);
 }
-function pieChart(sectorsData, sectorsColors, sectorsRadius,) {
+const pieChart = (sectorsData, sectorsColors, sectorsRadius) => {
     const total = sectorsData.reduce((a, b) => a + b);
     const radiansPerUnit = (2 * Math.PI) / total;
 
@@ -43,8 +43,7 @@ function pieChart(sectorsData, sectorsColors, sectorsRadius,) {
         startAngleRadians += sweepAngleRadians;
     }
 }
-window.onload = function () {
-    console.log(2222);
+const runScript = () => {
     pieChart(data, colours, radius);
     const svg = document.querySelector('#svg');
     svg.insertAdjacentHTML('beforeend', `<circle cx="256" cy="256" r="50" fill="white"/>`);
@@ -63,3 +62,4 @@ window.onload = function () {
         }
     })
 }
+export { runScript };
