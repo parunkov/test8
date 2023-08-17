@@ -1,15 +1,16 @@
 {
-  "name": "webpack-boilerplate",
-  "version": "3.0.2",
-  "description": "Sensible webpack 5 boilerplate using Babel and PostCSS.",
+  "name": "test8",
+  "version": "0.1.0",
+  "description": "test",
   "main": "index.js",
-  "author": "Tania Rascia",
-  "license": "MIT",
+  "homepage": "https://parunkov.github.io/test8",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint 'src/**/*.js' || true",
-    "prettify": "prettier --write 'src/**/*.js'"
+    "prettify": "prettier --write 'src/**/*.js'",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d dist"
   },
   "keywords": [
     "webpack",
@@ -34,6 +35,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
     "postcss-loader": "^7.0.2",
